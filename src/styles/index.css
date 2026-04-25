@@ -1,0 +1,66 @@
+@import './designTokens.css';
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* Override Bootstrap colors with new palette */
+  --bs-primary: #1a56db;           /* Professional Navy */
+  --bs-secondary: #f97316;         /* Orange Accent */
+  --bs-success: #16a34a;
+  --bs-warning: #eab308;
+  --bs-danger: #dc2626;
+  --bs-info: #0891b2;
+  --bs-light: #f8fafc;
+  --bs-dark: #0f172a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-bg-secondary);
+}
+
+/* Consistent spacing */
+.container-fluid {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

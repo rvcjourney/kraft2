@@ -1,0 +1,288 @@
+/* ── Sidebar Shell ────────────────────────────────────────────────────────── */
+.ck-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 230px;
+  height: 100vh;
+  background: #0c1232;
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Collapsed state ─────────────────────────────────────────────────────── */
+.ck-sidebar--collapsed {
+  width: 62px;
+}
+
+.ck-sidebar--collapsed .ck-sidebar-brand-text,
+.ck-sidebar--collapsed .ck-nav-label,
+.ck-sidebar--collapsed .ck-nav-label-text,
+.ck-sidebar--collapsed .ck-user-info {
+  display: none;
+}
+
+.ck-sidebar--collapsed .ck-sidebar-brand {
+  justify-content: center;
+  padding: 1.5rem 0 1rem;
+}
+
+.ck-sidebar--collapsed .ck-sidebar-user {
+  justify-content: center;
+  padding: 0.65rem 0;
+  background: transparent;
+}
+
+.ck-sidebar--collapsed .ck-nav-item {
+  justify-content: center;
+  padding: 0.62rem 0;
+}
+
+.ck-sidebar--collapsed .ck-sidebar-nav {
+  padding: 0 0.5rem;
+}
+
+.ck-sidebar--collapsed .ck-sidebar-footer {
+  padding: 0.5rem 0.5rem 1rem;
+}
+
+/* ── Toggle button ───────────────────────────────────────────────────────── */
+.ck-sidebar-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0.35rem 0.9rem 0.35rem 0;
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.35);
+  cursor: pointer;
+  transition: color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.ck-sidebar-toggle:hover {
+  color: rgba(255,255,255,0.75);
+}
+
+.ck-sidebar--collapsed .ck-sidebar-toggle {
+  justify-content: center;
+  padding: 0.35rem 0;
+}
+
+/* ── Brand ────────────────────────────────────────────────────────────────── */
+.ck-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1.25rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 0.5rem;
+}
+
+.ck-sidebar-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #facc15, #f97316);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(249,115,22,0.35);
+}
+
+.ck-sidebar-brand-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.ck-sidebar-brand-tag {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 1px;
+}
+
+/* ── Nav ──────────────────────────────────────────────────────────────────── */
+.ck-sidebar-nav {
+  padding: 0 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ck-nav-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.28);
+  padding: 0.25rem 0.6rem 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.ck-nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.62rem 0.85rem;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.ck-nav-item:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.ck-nav-item--active {
+  background: rgba(31, 79, 214, 0.28);
+  color: #fff;
+  font-weight: 600;
+}
+
+.ck-nav-item--active svg {
+  color: #6ea4ff;
+}
+
+.ck-nav-item--logout {
+  color: rgba(248,113,113,0.8);
+}
+
+.ck-nav-item--logout:hover {
+  background: rgba(220,38,38,0.12);
+  color: #fca5a5;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+.ck-sidebar-footer {
+  padding: 0.5rem 0.75rem 1rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ck-sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  margin: 4px 0;
+}
+
+.ck-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1f4fd6, #6ea4ff);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ck-user-info {
+  min-width: 0;
+}
+
+.ck-user-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+}
+
+.ck-user-email {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.4);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Main content offset ─────────────────────────────────────────────────── */
+.ck-main {
+  margin-left: 230px;
+  min-height: 100vh;
+  background: #f4f6fb;
+  transition: margin-left 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ck-main--collapsed {
+  margin-left: 62px;
+}
+
+/* ── Mobile: bottom tab bar ──────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .ck-sidebar {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-right: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    overflow: visible;
+    padding: 0;
+  }
+
+  .ck-sidebar-brand,
+  .ck-nav-label,
+  .ck-sidebar-footer,
+  .ck-sidebar-user,
+  .ck-user-info,
+  .ck-nav-item--logout {
+    display: none !important;
+  }
+
+  .ck-sidebar-nav {
+    flex-direction: row;
+    padding: 0;
+    gap: 0;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .ck-nav-item {
+    flex-direction: column;
+    gap: 2px;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.62rem;
+    border-radius: 0;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ck-main {
+    margin-left: 0;
+    padding-bottom: 60px;
+  }
+}

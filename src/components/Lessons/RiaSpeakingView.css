@@ -1,0 +1,336 @@
+/* ═══════════════════════════════════════════════════════════════ */
+/* Ria Speaking View - Animated Avatar with Zoom & Pulse */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.ria-speaking-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8eef9 100%);
+  border-radius: 20px;
+  border: 2px solid #1a56db;
+  min-height: 400px;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(26, 86, 219, 0.12);
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* Ria Avatar Circle */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.ria-avatar-circle {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a56db 0%, #2563eb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(26, 86, 219, 0.4);
+  transition: all 0.2s ease;
+  cursor: default;
+  border: 4px solid #f97316;
+}
+
+.ria-avatar-circle.speaking {
+  animation: riaZoom 1.2s ease-in-out infinite;
+  box-shadow: 0 12px 32px rgba(26, 86, 219, 0.6);
+  border-color: #fb923c;
+}
+
+.ria-avatar-inner {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+
+/* Zoom Animation */
+@keyframes riaZoom {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 8px 24px rgba(26, 86, 219, 0.4);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 16px 40px rgba(26, 86, 219, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 8px 24px rgba(26, 86, 219, 0.4);
+  }
+}
+
+/* Pulse Ring Around Avatar */
+.speaking-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid rgba(249, 115, 22, 0.8);
+  animation: pulsRing 1.5s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulsRing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* Subtitle Display */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.ria-subtitle {
+  width: 100%;
+  max-width: 600px;
+  padding: 24px;
+  /* background: white; */
+  border-radius: 16px;
+  /* border: 2px solid #e5e7eb; */
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* .ria-subtitle.active {
+  border-color: #1a56db;
+  background: linear-gradient(135deg, rgba(26, 86, 219, 0.08) 0%, rgba(37, 99, 235, 0.08) 100%);
+  box-shadow: 0 4px 12px rgba(26, 86, 219, 0.2);
+} */
+
+.ria-subtitle.idle {
+  opacity: 0.85;
+  /* background: #fafbfc; */
+  /* border-color: #e5e7eb; */
+}
+
+.subtitle-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #1f2937;
+  margin: 0;
+  font-weight: 500;
+  animation: fadeIn 0.4s ease;
+}
+
+.idle-text {
+  font-size: 16px;
+  color: #6b7280;
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* Speaking Animation Dots */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.speaking-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.speaking-dots span {
+  width: 6px;
+  height: 6px;
+  background: #1a56db;
+  border-radius: 50%;
+  animation: dotBounce 1.4s infinite;
+}
+
+.speaking-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.speaking-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.speaking-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotBounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* Control Buttons */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.ria-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+  max-width: 50px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+
+.control-button:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.control-button:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.control-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Play button - wider with primary color */
+.control-button:first-child {
+  flex: 1;
+  min-width: 150px;
+  background: linear-gradient(135deg, #1a56db 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  height: 52px;
+}
+
+.control-button:first-child:not(:disabled):hover {
+  background: linear-gradient(135deg, #154ec7 0%, #1d51d4 100%);
+}
+
+/* Stop button - use orange accent and make prominent */
+.control-button:last-child {
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  background: #f97316;
+  color: white;
+  border: none;
+}
+
+.control-button:last-child:not(:disabled):hover {
+  background: #ea580c;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* Fade In Animation */
+/* ═══════════════════════════════════════════════════════════════ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* Responsive Design */
+/* ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .ria-speaking-container {
+    gap: 20px;
+    padding: 30px 16px;
+    min-height: 350px;
+  }
+
+  .ria-avatar-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .ria-avatar-inner {
+    font-size: 30px;
+  }
+
+  .ria-subtitle {
+    max-width: 100%;
+    padding: 16px;
+    min-height: 80px;
+  }
+
+  .subtitle-text {
+    font-size: 16px;
+  }
+
+  .control-button:first-child {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ria-speaking-container {
+    gap: 16px;
+    padding: 20px 12px;
+    min-height: 300px;
+  }
+
+  .ria-avatar-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .ria-avatar-inner {
+    font-size: 24px;
+  }
+
+  .ria-subtitle {
+    padding: 12px;
+    min-height: 70px;
+  }
+
+  .subtitle-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .ria-controls {
+    max-width: 50%;
+  }
+
+  .control-button:first-child {
+    min-width: 100px;
+    font-size: 14px;
+  }
+
+  .control-button:last-child {
+    width: 44px;
+    height: 44px;
+  }
+}

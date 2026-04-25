@@ -1,0 +1,389 @@
+/* ── Lessons Home Shell ───────────────────────────────────────────────────── */
+.lh-shell {
+  padding: 2rem 2.25rem;
+  min-height: 100vh;
+}
+
+/* ── Welcome Header ───────────────────────────────────────────────────────── */
+.lh-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.lh-welcome {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.3rem;
+}
+
+.lh-name {
+  color: #1f4fd6;
+}
+
+.lh-sub {
+  color: #5b6b84;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.lh-points-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #fff;
+  border: 1px solid #dbe4f0;
+  border-radius: 14px;
+  padding: 0.65rem 1rem;
+  box-shadow: 0 4px 14px rgba(20,45,92,0.07);
+  flex-shrink: 0;
+}
+
+.lh-points-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.lh-points-value {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.lh-points-label {
+  font-size: 0.68rem;
+  color: #5b6b84;
+  margin-top: 1px;
+}
+
+/* ── Module Bar ───────────────────────────────────────────────────────────── */
+.lh-module-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.lh-module-chip {
+  background: #1f4fd6;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+}
+
+.lh-module-meta {
+  font-size: 0.8rem;
+  color: #5b6b84;
+  background: #fff;
+  border: 1px solid #dbe4f0;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+}
+
+.lh-badge-beginner {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #15803d;
+}
+
+/* ── Filter Tabs ──────────────────────────────────────────────────────────── */
+.lh-tabs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.lh-tab {
+  padding: 0.42rem 1rem;
+  border-radius: 999px;
+  border: 1.5px solid #dbe4f0;
+  background: #fff;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #5b6b84;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lh-tab:hover {
+  border-color: #1f4fd6;
+  color: #1f4fd6;
+  background: #f0f4ff;
+}
+
+.lh-tab--active {
+  background: #1f4fd6;
+  border-color: #1f4fd6;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── Section Heading ──────────────────────────────────────────────────────── */
+.lh-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.lh-section-count {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #5b6b84;
+  background: #f1f5f9;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+}
+
+/* ── Module Cards Grid ────────────────────────────────────────────────────── */
+.lh-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+}
+
+@media (max-width: 1200px) {
+  .lh-modules-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .lh-modules-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Topic Cards Grid (used inside ModuleTopicsView) ─────────────────────── */
+.lh-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .lh-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .lh-grid { grid-template-columns: repeat(2, 1fr); }
+  .lh-shell { padding: 1.5rem 1.25rem; }
+}
+
+@media (max-width: 580px) {
+  .lh-grid { grid-template-columns: 1fr; }
+  .lh-header { flex-direction: column; }
+  .lh-welcome { font-size: 1.3rem; }
+}
+
+/* ── ModuleTopicsView shell ───────────────────────────────────────────────── */
+.mtv-shell {
+  padding: 2rem 2.25rem;
+  min-height: 100vh;
+}
+
+.mtv-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mtv-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  color: #5b6b84;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.mtv-back-btn:hover {
+  color: #1f4fd6;
+}
+
+.mtv-module-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mtv-module-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mtv-module-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.mtv-chip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.mtv-chip--gray {
+  background: #f1f5f9;
+  color: #5b6b84;
+}
+
+.mtv-tabs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.mtv-tab {
+  padding: 0.38rem 0.9rem;
+  border-radius: 999px;
+  border: 1.5px solid #dbe4f0;
+  background: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #5b6b84;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mtv-tab:hover {
+  border-color: #1f4fd6;
+  color: #1f4fd6;
+}
+
+.mtv-tab--active {
+  background: #1f4fd6;
+  border-color: #1f4fd6;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── Topic Card ───────────────────────────────────────────────────────────── */
+.topic-card {
+  background: #fff;
+  border: 1.5px solid #dbe4f0;
+  border-radius: 14px;
+  padding: 1.15rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+}
+
+.topic-card:hover {
+  box-shadow: 0 8px 28px rgba(20,45,92,0.12);
+  transform: translateY(-2px);
+  border-color: #b8caff;
+}
+
+.topic-card--done {
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+}
+
+.topic-card--done:hover {
+  border-color: #86efac;
+}
+
+.tc-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.tc-done-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #10b981;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tc-body {
+  flex: 1;
+}
+
+.tc-type-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.2rem;
+}
+
+.tc-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.3rem;
+  line-height: 1.3;
+}
+
+.tc-desc {
+  font-size: 0.78rem;
+  color: #5b6b84;
+  line-height: 1.5;
+}
+
+.tc-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.tc-min {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.tc-pts {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: #eff6ff;
+  color: #1f4fd6;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+}

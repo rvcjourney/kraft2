@@ -1,0 +1,463 @@
+/* Loan Lesson Component Styles */
+
+.loan-lesson {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8eef9 100%);
+  min-height: 100vh;
+}
+
+/* Instructor Card */
+.instructor-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.instructor-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.instructor-avatar {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a56db 0%, #2563eb 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  border: 3px solid #f97316;
+}
+
+/* Topic Card */
+.topic-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.topic-card .card-header {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #1a56db 0%, #2563eb 100%);
+  border-bottom: 4px solid #f97316;
+  color: white;
+}
+
+.topic-card .card-header h4 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: white;
+  margin: 0;
+}
+
+/* Lesson Content */
+.lesson-content {
+  padding: 1.5rem 0;
+}
+
+.lesson-content p {
+  line-height: 1.8;
+  font-size: 16px;
+  color: #333;
+}
+
+.lesson-content .lead {
+  font-size: 17px;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Cards Section - Loan Types */
+.cards-content {
+  padding: 1.5rem 0;
+}
+
+.cards-summary-content {
+  padding: 1.5rem 0;
+}
+
+.cards-summary-content .card {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.cards-summary-content .card.bg-success {
+  background-color: #f0f9f5 !important;
+}
+
+.cards-summary-content .card-body {
+  padding: 2rem !important;
+}
+
+.loan-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+  background: #fff;
+}
+
+.loan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-color: #0d6efd;
+}
+
+.loan-card.border-success {
+  background-color: #f0f9f5 !important;
+}
+
+.loan-card .card-header {
+  background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+  padding: 1rem;
+}
+
+.loan-card .card-header h6 {
+  font-weight: 600;
+}
+
+.loan-card .card-body {
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.loan-card .card-text {
+  line-height: 1.8;
+  color: #555;
+  font-size: 1.05rem;
+}
+
+/* Teacher narration card */
+.loan-card.bg-light.border-primary {
+  border-radius: 12px !important;
+}
+
+.loan-card.bg-light.border-primary .card-body {
+  padding: 2rem;
+}
+
+/* Knowledge Test */
+.test-content {
+  padding: 1.5rem 0;
+}
+
+.question-block {
+  background-color: #f9f9f9;
+  border-color: #dee2e6;
+  border-radius: 8px;
+}
+
+.question-block h6 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.question-block .form-check {
+  padding: 0.5rem 0;
+}
+
+.question-block .form-check-input {
+  margin-top: 0.4rem;
+  cursor: pointer;
+}
+
+.question-block .form-check-label {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  color: #555;
+}
+
+.question-block .form-check-input:checked + .form-check-label {
+  font-weight: 500;
+  color: #0d6efd;
+}
+
+/* Test Results */
+.explanation-block {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.explanation-block.border-success {
+  background-color: #f0f8f5 !important;
+}
+
+.explanation-block.border-danger {
+  background-color: #fdf8f7 !important;
+}
+
+.explanation-block h6 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.explanation-block p {
+  margin-bottom: 0.5rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Module Completion */
+.module-completion-content {
+  padding: 2rem 0;
+}
+
+.module-completion-content .alert {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(40, 167, 69, 0.15);
+}
+
+/* Eligibility / Pillars */
+.eligibility-content {
+  padding: 1.5rem 0;
+}
+
+.pillars-section {
+  background-color: #f0f4f8;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.pillars-section h6 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.pillar-card {
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.pillar-card.completed {
+  border-color: #28a745;
+  background-color: #f1f9f5;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.15);
+}
+
+.pillar-card.current {
+  border-color: #0d6efd;
+  background-color: #f0f7ff;
+  box-shadow: 0 2px 12px rgba(13, 110, 253, 0.2);
+}
+
+.pillar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.pillar-card .card-body {
+  padding: 1.5rem 1rem;
+}
+
+.pillar-card h6 {
+  color: #333;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.pillar-card small {
+  color: #666;
+  line-height: 1.4;
+  font-size: 0.85rem;
+}
+
+.empty-circle {
+  width: 28px;
+  height: 28px;
+  border: 2px solid #dee2e6;
+  border-radius: 50%;
+  margin: 0 auto 0.5rem;
+}
+
+.current-circle {
+  width: 28px;
+  height: 28px;
+  border: 2px solid #0d6efd;
+  border-radius: 50%;
+  margin: 0 auto 0.5rem;
+  position: relative;
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+.current-circle .pulse {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #0d6efd;
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    opacity: 1;
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.pillar-card.completed .empty-circle {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+/* Progress Bar */
+.progress {
+  height: 24px;
+  border-radius: 12px;
+  background-color: #e9ecef;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #6a3f93 100%);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border: none;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #218838 0%, #1aa179 100%);
+}
+
+/* Badges */
+.badge {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  border-radius: 6px;
+}
+
+.badge-secondary {
+  background-color: #6c757d;
+}
+
+/* Alert Styles */
+.alert {
+  border: none;
+  border-radius: 10px;
+  border-left: 4px solid;
+}
+
+.alert-info {
+  border-left-color: #0d6efd;
+  background-color: #f0f7ff;
+  color: #0c5de4;
+}
+
+.alert-success {
+  border-left-color: #28a745;
+  background-color: #f0f9f5;
+  color: #155724;
+}
+
+.alert-warning {
+  border-left-color: #ffc107;
+  background-color: #fffbf0;
+  color: #856404;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .instructor-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .avatar-placeholder {
+    font-size: 14px;
+  }
+
+  .topic-card .card-header {
+    padding: 1rem;
+  }
+
+  .topic-card .card-header h4 {
+    font-size: 18px;
+  }
+
+  .loan-card .card-body {
+    padding: 0.75rem;
+  }
+
+  .loan-card .card-text {
+    font-size: 14px;
+  }
+
+  .question-block {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+  }
+}
+
+/* Utility Classes */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.light-success {
+  background-color: #f0f8f5;
+}
+
+.light-danger {
+  background-color: #fdf8f7;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* Speech-First Interface - Hide Text, Show Subtitles */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.hidden-text p.lead,
+.hidden-text .card-text,
+.hidden-text > p {
+  display: none;
+}
+
+.hidden-text .lesson-content p,
+.hidden-text .eligibility-content p {
+  display: none;
+}

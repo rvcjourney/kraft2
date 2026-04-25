@@ -1,0 +1,389 @@
+/* ── Onboarding Shell — card inside the content container ───────────────── */
+.ob-shell {
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.10);
+  min-height: 620px;
+  background: #fff;
+}
+
+/* ── Left: Form Panel ────────────────────────────────────────────────────── */
+.ob-form-panel {
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 2rem;
+  background: #fff;
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .ob-form-panel {
+    flex: 0 0 46%;
+    max-width: 46%;
+    padding: 2.75rem 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ob-form-panel {
+    flex: 0 0 42%;
+    max-width: 42%;
+    padding: 3rem 3.5rem;
+  }
+}
+
+/* Brand */
+.ob-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.ob-brand-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #1a56db 0%, #0d47a1 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ob-brand-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1a56db;
+  letter-spacing: -0.02em;
+}
+
+/* Progress */
+.ob-progress-wrap {
+  margin-bottom: 1.75rem;
+}
+
+.ob-progress-bar {
+  height: 5px;
+  border-radius: 99px;
+}
+
+.ob-step-dots {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+
+/* Connector line behind dots */
+.ob-step-dots::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: #e5e7eb;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.ob-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  border: 2px solid #e5e7eb;
+  color: #9ca3af;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.ob-dot--done {
+  background: #10b981;
+  border-color: #10b981;
+  color: #fff;
+}
+
+.ob-dot--active {
+  background: #1a56db;
+  border-color: #1a56db;
+  color: #fff;
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px rgba(26, 86, 219, 0.15);
+}
+
+/* Step content */
+.ob-step-content {
+  flex: 1;
+  margin-bottom: 1.5rem;
+  animation: obFadeIn 0.25s ease;
+}
+
+@keyframes obFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ob-step-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.3rem;
+}
+
+.ob-step-sub {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 1.1rem;
+}
+
+.ob-welcome-box {
+  background: #f0f4ff;
+  border: 1px solid rgba(26, 86, 219, 0.15);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+}
+
+.ob-done-icon {
+  font-size: 3rem;
+  line-height: 1;
+  color: #10b981;
+  margin-bottom: 0.75rem;
+}
+
+/* Option grid */
+.option-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.55rem;
+}
+
+/* Language checkboxes */
+.language-checkbox {
+  padding: 0.8rem 1rem !important;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+}
+
+.language-checkbox:hover {
+  border-color: #1a56db;
+  background: rgba(26, 86, 219, 0.03);
+}
+
+.language-checkbox input:checked ~ label {
+  color: #1a56db;
+  font-weight: 600;
+}
+
+/* Error alert */
+.ob-alert {
+  border: none;
+  border-left: 4px solid #dc2626;
+  border-radius: 10px;
+  background: rgba(220, 38, 38, 0.07);
+  color: #991b1b;
+  margin-bottom: 1rem;
+}
+
+/* Navigation */
+.ob-nav {
+  display: flex;
+  gap: 0.65rem;
+  padding-top: 0.25rem;
+}
+
+.ob-btn-back,
+.ob-btn-next {
+  flex: 1;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.55rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  transition: all 0.15s ease;
+}
+
+.ob-btn-back {
+  border: 2px solid #1a56db;
+  color: #1a56db;
+  background: transparent;
+}
+
+.ob-btn-back:hover:not(:disabled) {
+  background: #1a56db;
+  color: #fff;
+}
+
+.ob-btn-back:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ob-btn-next {
+  border: none;
+}
+
+.ob-btn-next:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(26, 86, 219, 0.28);
+}
+
+/* ── Right: Image / Illustration Panel ───────────────────────────────────── */
+.ob-image-panel {
+  flex: 1;
+  background: linear-gradient(145deg, #1e3a8a 0%, #1a56db 50%, #2563eb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ob-image-inner {
+  padding: 3rem 2.5rem;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+/* Illustration placeholder circles */
+.ob-illustration {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 2rem;
+}
+
+.ob-illus-circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.ob-illus-circle--lg {
+  width: 180px;
+  height: 180px;
+  top: 0; left: 0;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.ob-illus-circle--md {
+  width: 128px;
+  height: 128px;
+  top: 26px; left: 26px;
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.ob-illus-circle--sm {
+  width: 80px;
+  height: 80px;
+  top: 50px; left: 50px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.ob-illus-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Panel text */
+.ob-image-text h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.65rem;
+}
+
+.ob-image-text p {
+  font-size: 0.9rem;
+  opacity: 0.80;
+  line-height: 1.65;
+  max-width: 280px;
+  margin: 0 auto 1.5rem;
+}
+
+.ob-feature-list {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  text-align: left;
+}
+
+.ob-feature {
+  font-size: 0.85rem;
+  opacity: 0.88;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Decorative background blobs */
+.ob-image-panel::before,
+.ob-image-panel::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ob-image-panel::before {
+  width: 360px;
+  height: 360px;
+  bottom: -100px;
+  right: -100px;
+}
+
+.ob-image-panel::after {
+  width: 220px;
+  height: 220px;
+  top: -60px;
+  left: -60px;
+}
+
+/* ── Mobile: form full width, image hidden ───────────────────────────────── */
+@media (max-width: 767px) {
+  .ob-shell {
+    border-radius: 14px;
+    min-height: unset;
+  }
+
+  .ob-form-panel {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .ob-brand {
+    margin-bottom: 1.25rem;
+  }
+
+  .ob-step-title {
+    font-size: 1.05rem;
+  }
+
+  .ob-dot {
+    width: 24px;
+    height: 24px;
+    font-size: 0.62rem;
+  }
+}

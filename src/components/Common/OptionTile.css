@@ -1,0 +1,111 @@
+/* ========================================
+   OptionTile Component Styles
+   Reusable selection tile for forms
+   ======================================== */
+
+.option-tile {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) !important;
+  border: 2px solid var(--color-border) !important;
+  border-radius: var(--radius-lg) !important;
+  background-color: var(--color-bg-primary) !important;
+  color: var(--color-text-primary) !important;
+  text-align: left;
+  transition: var(--transition-base);
+  min-height: 70px;
+  justify-content: flex-start;
+}
+
+.option-tile:hover {
+  border-color: var(--color-primary) !important;
+  background-color: rgba(26, 86, 219, 0.03) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 86, 219, 0.1);
+}
+
+.option-tile.selected {
+  border-color: var(--color-primary) !important;
+  background-color: rgba(26, 86, 219, 0.08) !important;
+  box-shadow: 0 4px 12px rgba(26, 86, 219, 0.15);
+}
+
+/* Icon */
+.option-tile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: rgba(26, 86, 219, 0.1);
+  color: var(--color-primary);
+  flex-shrink: 0;
+  transition: var(--transition-base);
+}
+
+.option-tile.selected .option-tile-icon {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.option-tile:hover .option-tile-icon {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Content */
+.option-tile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.option-tile-label {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  transition: var(--transition-base);
+}
+
+.option-tile.selected .option-tile-label {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.option-tile-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* Focus state for accessibility */
+.option-tile:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-color: var(--color-primary) !important;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .option-tile {
+    min-height: 60px;
+    padding: var(--spacing-sm) !important;
+  }
+
+  .option-tile-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .option-tile-label {
+    font-size: var(--font-size-sm);
+  }
+
+  .option-tile-description {
+    font-size: 0.75rem;
+  }
+}
